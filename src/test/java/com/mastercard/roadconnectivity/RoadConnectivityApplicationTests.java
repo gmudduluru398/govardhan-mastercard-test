@@ -1,4 +1,4 @@
-package com.mastercard.codechallenge.roadconnectivity;
+package com.mastercard.roadconnectivity;
 
 
 /**
