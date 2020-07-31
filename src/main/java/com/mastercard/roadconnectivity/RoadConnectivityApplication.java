@@ -1,6 +1,8 @@
 package com.mastercard.roadconnectivity;
 
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 
@@ -20,6 +22,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan("com.mastercard.roadconnectivity.entity")
 @SpringBootApplication
 public class RoadConnectivityApplication {
+	
+	 private static final Logger LOGGER=LoggerFactory.getLogger(RoadConnectivityApplication.class);
 
 	public static void main(String[] args) {
 		SpringApplication.run(RoadConnectivityApplication.class, args);

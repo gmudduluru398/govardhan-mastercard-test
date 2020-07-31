@@ -9,9 +9,13 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
+
+
 
 /**
  * @author Govardhan Mudduluru
@@ -20,8 +24,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SecurityEntryPoint extends BasicAuthenticationEntryPoint {
+	
+	private static final Logger LOGGER=LoggerFactory.getLogger(SecurityEntryPoint.class);
 
-	@Override
+
+	@Override 
 	public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authEx)
 			throws IOException {
 		response.addHeader("WWW-Authenticate", "Basic realm=" + getRealmName());

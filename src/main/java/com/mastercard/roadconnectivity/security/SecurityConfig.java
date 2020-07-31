@@ -3,6 +3,8 @@
  */
 package com.mastercard.roadconnectivity.security;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -13,6 +15,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+
 /**
  * @author Govardhan Mudduluru
  *
@@ -21,11 +24,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+	
+	 private static final Logger LOGGER=LoggerFactory.getLogger(SecurityConfig.class);
 
-	@Bean
-	public BCryptPasswordEncoder encoder() {
-		return new BCryptPasswordEncoder();
-	}
 
 	@Value("${spring.security.user.name}")
 	private String user;
@@ -38,6 +39,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private SecurityEntryPoint securityEntryPoint;
+	
+	
+	@Bean
+	public BCryptPasswordEncoder encoder() {
+		return new BCryptPasswordEncoder();
+	}
+
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {

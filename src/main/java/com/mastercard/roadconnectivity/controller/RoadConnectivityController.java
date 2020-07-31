@@ -4,6 +4,8 @@
 package com.mastercard.roadconnectivity.controller;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mastercard.roadconnectivity.AppStartUpInitializer;
 import com.mastercard.roadconnectivity.exception.BadRequestException;
 import com.mastercard.roadconnectivity.exception.ServerRuntimeError;
 import com.mastercard.roadconnectivity.service.OriginDestinationLinkService;
@@ -24,9 +27,13 @@ import io.swagger.annotations.ApiResponses;
  * @author Govardhan Mudduluru
  *
  */
+
+
 @Api(value = "RoadConnectivityController", tags = { "RoadConnectivity Controller" })
 @RestController("/v1")
 public class RoadConnectivityController {
+	
+	 private static final Logger LOGGER=LoggerFactory.getLogger(RoadConnectivityController.class);
 
 	@Autowired
 	private OriginDestinationLinkService originDestlinkService;
