@@ -13,9 +13,7 @@ import com.mastercard.roadconnectivity.entity.OriginDestinationMapper;
  */
 public interface OriginDestinationMapperRepository extends CrudRepository<OriginDestinationMapper, Long> {
 	
-	Optional<OriginDestinationMapper> findById(Long id);
+	Optional<OriginDestinationMapper> findByOriginIdOrDestinationId(Long originId,Long destId);
 	
-	Optional<OriginDestinationMapper> findByOriginId(Long id);
 	
-	Optional<OriginDestinationMapper> findByDestinationId(Long id);
 }

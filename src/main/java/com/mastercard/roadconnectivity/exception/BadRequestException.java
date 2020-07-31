@@ -8,9 +8,14 @@ package com.mastercard.roadconnectivity.exception;
  *
  */
 public class BadRequestException extends Exception {
-	
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -628681711853497914L;
+
 	public BadRequestException(String message, Throwable cause) {
-        super(message, cause);
-    }
+		super(message, cause);
+	}
 
 }

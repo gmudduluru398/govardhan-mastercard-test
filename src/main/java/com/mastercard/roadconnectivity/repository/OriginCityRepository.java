@@ -14,7 +14,6 @@ import com.mastercard.roadconnectivity.entity.OriginCity;
  */
 public interface OriginCityRepository extends CrudRepository<OriginCity, Long>{
 	
-	Optional<OriginCity> findById(Long id);
 	
 	Optional<OriginCity> findByName(String name);
 
