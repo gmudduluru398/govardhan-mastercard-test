@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mastercard.roadconnectivity.AppStartUpInitializer;
 import com.mastercard.roadconnectivity.exception.BadRequestException;
 import com.mastercard.roadconnectivity.exception.ServerRuntimeError;
 import com.mastercard.roadconnectivity.service.OriginDestinationLinkService;

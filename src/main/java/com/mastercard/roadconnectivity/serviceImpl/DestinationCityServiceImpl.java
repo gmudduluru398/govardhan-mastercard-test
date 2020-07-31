@@ -15,7 +15,6 @@ import com.mastercard.roadconnectivity.entity.DestinationCity;
 import com.mastercard.roadconnectivity.exception.CityNotFoundException;
 import com.mastercard.roadconnectivity.model.DestinationCityDto;
 import com.mastercard.roadconnectivity.repository.DestinationCityRepository;
-import com.mastercard.roadconnectivity.security.SecurityEntryPoint;
 import com.mastercard.roadconnectivity.service.DestinationCityService;
 
 /**
